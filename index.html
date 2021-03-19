@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#00aba9">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <title>БЭМ Дипломный проект</title>
+
+  <link rel="stylesheet" href="/css/minireset.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/jquery.maskedinput.min.js"></script>
+  <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <span class="header__menu-icon"></span>
+      <nav class="nav">
+        <a href="#services" class="nav__item">Услуги</a>
+        <a href="#portfolio" class="nav__item">Портфолио</a>
+        <a href="#price" class="nav__item">Стоимость</a>
+      </nav>
+      <a href="tel:+7(499)995-55-77" class="header__phone">+7 (499) 995-55-77</a>
+      <a href="#callback" rel="show-popup" class="btn header__btn">Заказать звонок</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container about__container">
+        <div class="about__info">
+          <h1 class="about__heading">Дмитрий Алексеев</h1>
+          <p class="about__description">Frontend-разработчик и веб-верстальщик</p>
+          <a href="#services" class="btn btn_big">Узнать больше</a>
+        </div>
+      </div>
+      <div class="bg-list about__bg-list">
+        <span class="bg-list__item">#</span>
+        <span class="bg-list__item">{ }</span>
+        <span class="bg-list__item">&lt;div&gt;</span>
+        <span class="bg-list__item">&lt;div&gt;</span>
+        <span class="bg-list__item">&lt;/&gt;</span>
+        <span class="bg-list__item">&lt;/&gt;</span>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container services__container">
+        <h2 class="heading">Что я делаю</h2>
+        <ul class="services__list">
+          <li class="services__item services__item_layout">
+            Вёрстка лендинг–страниц и сайтов любой сложности
+          </li>
+          <li class="services__item services__item_responsive">
+            Адаптивная вёрстка под все браузеры и устройства
+          </li>
+          <li class="services__item services__item_programming">
+            Frontend–разработка и программирование
+          </li>
+          <li class="services__item services__item_coding">
+            Исправление и доработка существующей вёрстки
+          </li>
+        </ul>
+        <a href="#price" class="btn btn_big">Узнать стоимость</a>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container portfolio__container">
+        <h2 class="heading">Примеры моих работ</h2>
+        <div class="portfolio__slider">
+          <div class="portfolio__list">
+            <div class="portfolio__item">
+              <img src="/img/site1.jpg" alt="Сайт психолога Веры Антоновой">
+              <h3>Сайт психолога Веры Антоновой</h3>
+            </div>
+            <div class="portfolio__item">
+              <img src="/img/site2.jpg" alt="Сайт магазина детской одежды">
+              <h3>Сайт магазина детской одежды</h3>
+            </div>
+            <div class="portfolio__item">
+              <img src="/img/site3.jpg" alt="Сайт магазина «Рыболов»">
+              <h3>Сайт магазина «Рыболов»</h3>
+            </div>
+          </div>
+          <div class="portfolio__pagination"></div>
+        </div>
+        <div class="portfolio__button portfolio__button_prev"></div>
+        <div class="portfolio__button portfolio__button_next"></div>
+        <a href="#callback" rel="show-popup" class="btn btn_big">Заказать проект</a>
+      </div>
+    </section>
+
+    <section class="price" id="price">
+      <div class="container price__container">
+        <div class="price__info">
+          <h2 class="price__heading">Адаптивная вёрстка под все устройства и браузеры от 1000 рублей всего за 4 часа.*</h2>
+          <p class="price__description">* Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач.</p>
+        </div>
+      </div>
+      <div class="bg-list price__bg-list">
+        <span class="bg-list__item">#</span>
+        <span class="bg-list__item">{ }</span>
+        <span class="bg-list__item">{ }</span>
+        <span class="bg-list__item">&lt;div&gt;</span>
+        <span class="bg-list__item">&lt;/&gt;</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="#">Услуги</a>
+        </li>
+        <li class="menu__item">
+          <a href="#">Портфолио</a>
+        </li>
+        <li class="menu__item">
+          <a href="#">Стоимость</a>
+        </li>
+      </ul>
+      <div class="contacts">
+        <a href="tel:+7(499)995-77-55" class="contacts__item">
+          <i class="fa fa-phone" aria-hidden="true"></i>+7 (499) 995-77-55
+        </a>
+        <a href="mailto:dmitry@alekseev.com" class="contacts__item">
+          <i class="fa fa-envelope" aria-hidden="true"></i>dmitry@alekseev.com
+        </a>
+      </div>
+      <div class="social">
+        <a href="#callback" rel="show-popup" class="btn footer__btn">Заказать звонок</a>
+        <ul class="social-list">
+          <li class="social-list__item">
+            <a href="#" class="icon icon_vk"></a>
+          </li>
+          <li class="social-list__item">
+            <a href="#" class="icon icon_facebook"></a>
+          </li>
+          <li class="social-list__item">
+            <a href="#" class="icon icon_twitter"></a>
+          </li>
+          <li class="social-list__item">
+            <a href="#" class="icon icon_instagram"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom-under">
+      <div class="footer__copyrights">&copy; Дмитрий Алексеев, 2016 – 2018</div>
+    </div>
+  </footer>
+
+  <div class="popup popup_callback">
+    <a class="popup__close" href="#">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </a>
+    <h2 class="popup__heading">Заказать звонок</h2>
+    <form method="post" action="https://echo.htmlacademy.ru/" class="callback-form">
+      <label for="callback-name" class="callback-form__label">
+        <input type="text" name="callback-name" id="callback-name" class="callback-form__input" placeholder="Ваше имя" />
+      </label>
+      <label for="callback-phone" class="callback-form__label">
+        <input type="text" name="callback-phone" id="callback-phone" class="callback-form__input" placeholder="Ваш телефон*" />
+      </label>
+      <p class="callback-form__description">Поля помеченные * - обязательны для заполнения</p>
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+  </div>
+</body>
+
+</html>
