@@ -4,6 +4,8 @@ $(function () {
   let $buttonHeader = $('.header__btn');
   let $buttonFooter = $('.footer__btn');
   let $navItem = $('.nav__item');
+  let $formBody = $('.callback-form__body');
+  let $formAlert = $('<p class="alert alert_success">Ваша заявка отрпавлена успешно</p>');
 
   function toggleScroll() {
     if ($menu.hasClass('active')) {
@@ -55,7 +57,7 @@ $(function () {
   $(window).resize(changeButtonFooter);
 
   $('[rel=show-popup]').click(function () {
-    $('.popup_callback').fadeIn(500);
+    $('.popup_callback').fadeIn(700);
     $body.append('<div id="overlay"></div>');
     $('#overlay').show().css({
       'filter': 'alpha(opacity=80)'
@@ -64,7 +66,7 @@ $(function () {
   });
 
   $('.popup__close').click(function () {
-    $(this).parent().fadeOut(100);
+    $(this).parent().fadeOut(500);
     $('#overlay').remove('#overlay');
     return false;
   });
@@ -86,10 +88,14 @@ $(function () {
       $form.attr('action'),
       $form.serialize(),
       function () {
-        $('.callback-form').html('<p class="alert alert_success">Ваша заявка отрпавлена успешно</p>');
+        $formBody.hide();
+        $form.append($formAlert);
         setTimeout(() => {
-          $('.popup').fadeOut(100);
+          $('.popup').fadeOut(500);
           $('#overlay').remove('#overlay');
+          $formAlert.remove();
+          $formBody.show();
+          $('.callback-form__input').val('');
         }, 2000);
       }
     );
