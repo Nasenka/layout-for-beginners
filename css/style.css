@@ -154,7 +154,7 @@ body {
 
 .bg-list__item {
   position: absolute;
-  font-weight: bold;
+  font-weight: 700;
   -webkit-transition: -webkit-transform ease 0.5s;
   -o-transition: transform ease 0.5s;
   transition: -webkit-transform ease 0.5s;
@@ -1107,6 +1107,7 @@ body {
   height: 100%;
   background: #000;
   opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 
 @media (max-width: 1680px) {
