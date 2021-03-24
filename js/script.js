@@ -1,11 +1,12 @@
 $(function () {
-  let $menu = $('.header__menu-icon');
-  let $body = $('body');
-  let $buttonHeader = $('.header__btn');
-  let $buttonFooter = $('.footer__btn');
-  let $navItem = $('.nav__item');
-  let $formBody = $('.callback-form__body');
-  let $formAlert = $('<p class="alert alert_success">Ваша заявка отрпавлена успешно</p>');
+  const $body = $('body');
+  const $buttonFooter = $('.footer__btn');
+  const $buttonHeader = $('.header__btn');
+  const $formAlert = $('<p class="alert alert_success">Ваша заявка отрпавлена успешно</p>');
+  const $formBody = $('.callback-form__body');
+  const $menu = $('.header__menu-icon');
+  const $navItem = $('.nav__item');
+  const $overlay = $('<div id="overlay"></div>');
 
   function toggleScroll() {
     if ($menu.hasClass('active')) {
@@ -58,16 +59,14 @@ $(function () {
 
   $('[rel=show-popup]').click(function () {
     $('.popup_callback').fadeIn(700);
-    $body.append('<div id="overlay"></div>');
-    $('#overlay').show().css({
-      'filter': 'alpha(opacity=80)'
-    });
+    $body.append($overlay);
+    $overlay.show();
     return false;
   });
 
   $('.popup__close').click(function () {
     $(this).parent().fadeOut(500);
-    $('#overlay').remove('#overlay');
+    $overlay.remove();
     return false;
   });
 
@@ -92,7 +91,7 @@ $(function () {
         $form.append($formAlert);
         setTimeout(() => {
           $('.popup').fadeOut(500);
-          $('#overlay').remove('#overlay');
+          $overlay.remove();
           $formAlert.remove();
           $formBody.show();
           $('.callback-form__input').val('');
