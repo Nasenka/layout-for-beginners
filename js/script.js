@@ -6,32 +6,35 @@ $(function () {
   const $formBody = $('.callback-form__body');
   const $menu = $('.header__menu-icon');
   const $navItem = $('.nav__item');
-  const $overlay = $('<div id="overlay"></div>');
+  const $overlay = $('<div class="overlay"></div>');
 
-  function toggleScroll() {
-    if ($menu.hasClass('active')) {
-      $body.addClass('stop-scrolling');
+  function disableScroll() {
+    $body.addClass('stop-scrolling');
       $body.bind('touchmove', function (e) {
         e.preventDefault();
       });
-    } else {
-      $body.removeClass('stop-scrolling');
+  }
+
+  function enableScroll() {
+    $body.removeClass('stop-scrolling');
       $body.unbind('touchmove');
-    }
   }
 
   $menu.on('click', function () {
     $(this).toggleClass('active');
     $('.nav').toggleClass('open-menu');
-    toggleScroll();
+    if ($menu.hasClass('active')) {
+      disableScroll();
+    } else {
+      enableScroll();
+    }
   });
 
   $navItem.on('click', function () {
     if ($(document).outerWidth() <= 1024) {
       $menu.toggleClass('active');
       $('.nav').toggleClass('open-menu');
-      $body.removeClass('stop-scrolling');
-      $body.unbind('touchmove');
+      enableScroll();
     }
   });
 
@@ -77,7 +80,7 @@ $(function () {
 
     $form.find('.form-error').remove();
 
-    if ($form.find('input[name=callback-phone]').val() === '') {
+    if ($form.find('input[name=phone]').val() === '') {
       $form.find('label[for=callback-phone]')
         .prepend('<div class="callback-form__error">Введите телефон</div>');
       return false;
