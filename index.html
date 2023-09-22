@@ -23,9 +23,22 @@
   <script src="/js/jquery.maskedinput.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
   <script src="/js/script.js" defer></script>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc4-0UoAAAAAJUXJu92uIk0NWUR1NGOgpynHuzD"></script>
 </head>
 
 <body>
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6Lc4-0UoAAAAAJUXJu92uIk0NWUR1NGOgpynHuzD', {action: 'LOGIN'});
+        // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+        // reCAPTCHA Enterprise to the end user's browser.
+        // This token must be validated by creating an assessment.
+        // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+      });
+    }
+  </script>
   <header class="header">
     <div class="container header__container">
       <button class="header__menu-icon" type="button" aria-label="Меню">

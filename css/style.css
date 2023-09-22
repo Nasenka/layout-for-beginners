@@ -1066,6 +1066,7 @@ body {
 
 .form__label {
   position: relative;
+  display: block;
 }
 
 .form__input,
@@ -1120,7 +1121,7 @@ body {
 .form__input + .error {
   position: absolute;
   right: 0;
-  top: -22px;
+  top: -14px;
   font-size: 12px;
   color: #f00;
 }
